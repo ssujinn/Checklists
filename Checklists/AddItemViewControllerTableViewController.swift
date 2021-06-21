@@ -8,7 +8,8 @@
 import UIKit
 
 class AddItemViewControllerTableViewController: UITableViewController {
-
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,14 +19,27 @@ class AddItemViewControllerTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
+    }
 
     // MARK:- Actions
     @IBAction func cancel() {
+        print("Cotents of the text field: \(textField.text!)")
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func done() {
+        print("Cotents of the text field: \(textField.text!)")
         navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK:- Table View Delegates
+    override func tableView(_ tableView: UITableView,
+                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 
     /*
