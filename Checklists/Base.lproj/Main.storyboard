@@ -54,7 +54,7 @@
         <!--Add Item-->
         <scene sceneID="DuX-gw-JcR">
             <objects>
-                <tableViewController id="QrZ-cz-Y91" customClass="AddItemViewControllerTableViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="QrZ-cz-Y91" customClass="AddItemViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fOf-NP-84I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,11 +69,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lsX-aZ-vF1">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lsX-aZ-vF1">
                                                     <rect key="frame" x="7" y="4" width="361" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="QrZ-cz-Y91" eventType="editingDidEndOnExit" id="6dL-CN-T6R"/>
+                                                        <outlet property="delegate" destination="QrZ-cz-Y91" id="ir8-9K-DYf"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -92,13 +96,14 @@
                                 <action selector="cancel" destination="QrZ-cz-Y91" id="bjn-MJ-zHF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="kqY-fZ-qHN">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="kqY-fZ-qHN">
                             <connections>
                                 <action selector="done" destination="QrZ-cz-Y91" id="hoh-8G-vBA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="kqY-fZ-qHN" id="0Hy-hN-GhM"/>
                         <outlet property="textField" destination="lsX-aZ-vF1" id="dzY-Tp-qts"/>
                     </connections>
                 </tableViewController>

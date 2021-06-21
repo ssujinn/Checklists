@@ -14,7 +14,7 @@
 		F66C4C58266F2B8500E0DD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66C4C57266F2B8500E0DD71 /* Assets.xcassets */; };
 		F66C4C5B266F2B8500E0DD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66C4C59266F2B8500E0DD71 /* LaunchScreen.storyboard */; };
 		F66C4C65266F304A00E0DD71 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66C4C64266F304A00E0DD71 /* ChecklistItem.swift */; };
-		F66C4C6B26801F6800E0DD71 /* AddItemViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66C4C6A26801F6800E0DD71 /* AddItemViewControllerTableViewController.swift */; };
+		F66C4C6B26801F6800E0DD71 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66C4C6A26801F6800E0DD71 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		F66C4C5A266F2B8500E0DD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F66C4C5C266F2B8500E0DD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66C4C64266F304A00E0DD71 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
-		F66C4C6A26801F6800E0DD71 /* AddItemViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		F66C4C6A26801F6800E0DD71 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				F66C4C50266F2B6F00E0DD71 /* SceneDelegate.swift */,
 				F66C4C52266F2B6F00E0DD71 /* ChecklistViewController.swift */,
 				F66C4C54266F2B6F00E0DD71 /* Main.storyboard */,
-				F66C4C6A26801F6800E0DD71 /* AddItemViewControllerTableViewController.swift */,
+				F66C4C6A26801F6800E0DD71 /* AddItemViewController.swift */,
 				F66C4C57266F2B8500E0DD71 /* Assets.xcassets */,
 				F66C4C59266F2B8500E0DD71 /* LaunchScreen.storyboard */,
 				F66C4C5C266F2B8500E0DD71 /* Info.plist */,
@@ -146,7 +146,7 @@
 				F66C4C53266F2B6F00E0DD71 /* ChecklistViewController.swift in Sources */,
 				F66C4C4F266F2B6F00E0DD71 /* AppDelegate.swift in Sources */,
 				F66C4C51266F2B6F00E0DD71 /* SceneDelegate.swift in Sources */,
-				F66C4C6B26801F6800E0DD71 /* AddItemViewControllerTableViewController.swift in Sources */,
+				F66C4C6B26801F6800E0DD71 /* AddItemViewController.swift in Sources */,
 				F66C4C65266F304A00E0DD71 /* ChecklistItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
