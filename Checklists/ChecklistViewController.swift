@@ -55,10 +55,13 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
     }
     
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem){
+        let label = cell.viewWithTag(1001) as! UILabel
+        
         if item.checked {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
+            label.text = "✓"
+        }
+        else {
+            label.text = ""
         }
     }
     func configureText(for cell: UITableViewCell, with item: ChecklistItem){
@@ -104,11 +107,29 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         navigationController?.popViewController(animated: true)
     }
     
+    // Editing
+    func addItemViewController(_ controller: AddItemViewController, didFinishEditing item: ChecklistItem) {
+        if let index = items.firstIndex(of: item) {
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                configureText(for: cell, with: item)
+            }
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
     // MARK:- Navgation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItem" {
             let controller = segue.destination as! AddItemViewController
             controller.delegate = self
-        }
-    }
+        } else if segue.identifier == "EditItem" {
+            let controller = segue.destination as! AddItemViewController
+            controller.delegate = self
+            
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell){
+                controller.itemToEdit = items[indexPath.row]
+            }   // End of if let
+        }   // End of if
+    }   // End of prepare
 }
